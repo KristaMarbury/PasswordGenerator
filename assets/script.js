@@ -90,66 +90,41 @@ let uppercaseCharacters = [
   "Z",
 ];
 
+let passwordLength = prompt(`How long is the password?`);
+
+let characterList = [];
+
+//Repeat this line for each part of the password builder
+let specialCharactersConfirm = confirm(`Do you want special characters?`);
+let numberCharactersConfirm = confirm(`Do you want numbers?`);
+let uppercaseCharactersConfirm = confirm(`Do you want uppercase letters?`);
+let lowercaseCharactersConfirm = confirm(`Do you want lowercase letters?`);
+if (specialCharactersConfirm === true) {
+  characterList.push(specialCharacters);
+}
+
+//use a method to make it refresh..
+if (passwordLength < 8) {
+  alert(`Sorry, try again!`);
+}
+
+for (let i = 0; i < characterList.length; i++) {
+  Math.floor(Math.random() * 10);
+}
+//if statments for each character type
+console.log(specialCharactersConfirm);
+console.log(characterList);
+console.log(passwordLength);
 // Assignment Code
-var generateBtn = document.querySelector("#generate");
+let generateBtn = document.querySelector("#generate");
 
 // 1) generate a password... 2)use arrays and make sure to combine them all so that they can all be used when things are not checked
 function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
+  let password = generatePassword();
+  let passwordText = document.querySelector("#password");
 
   passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
-
-//available choices
-//let choices = ["R", "P", "S"];
-
-//game stats
-//let wins = 0;
-//let losses = 0;
-//let ties = 0;
-
-//function playGame() {
-//prompt user for their selection store it in variable
-//let userChoice = window.prompt("Enter R, P, or S");
-//userChoice = userChoice.toUpperCase();
-//window.alert(`You chose ${userChoice}`);
-
-//assign a random choice for the computer
-//let index = Math.floor(Math.random() * choices.length);
-//let computerChoice = choices[index];
-//window.alert(`The computer chose ${computerChoice}`);
-//console.log(computerChoice);
-
-//if (userChoice == computerChoice) {
-//ties++;
-//window.alert("Its a tie!");
-//} else if (
-//(userChoice === "R" && computerChoice === "S") ||
-//(userChoice === "S" && computerChoice === "P") ||
-//(userChoice === "P" && computerChoice === "R")
-//) {
-//wins++;
-//window.alert("Winner Winner Chicken Dinner!");
-//} else {
-//losses++;
-//window.alert("Yikes You Lost!");
-//}
-
-//print stats to the screen
-//window.alert(`Your Groovy Stats:
-//Wins: ${wins}
-//Losses: ${losses}
-//Ties: ${ties}
-//`);
-//let playAgain = window.confirm("Wanna Go Again?");
-
-//if (playAgain === true) {
-//playGame();
-//}
-//}
-
-//playGame();
+generateBtn.addEventListener("click", writePassword());
