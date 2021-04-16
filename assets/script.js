@@ -93,59 +93,50 @@ let uppercaseCharacters = [
 
 let characterList = [];
 
-//  if (passwordLength < 8) {
-//   window.alert("Your password must be at least 8 characters");
-//   passwordLength = " ";
-//   passwordLength = window.prompt(
-//     "You password should be (8 minimum - 128 maximum)"
-//   );
-//   window.alert(`Your password is ${passwordLength} characters long`);
-// } else if (passwordLength > 128) {
-//   window.alert("Your password needs the be 128 characters or less");
-//   passwordLength = " ";
-//   passwordLength = window.prompt(
-//     "You password should be (8 minimum - 128 maximum)"
-//   );
-//   window.alert(`Your password is ${passwordLength} characters long.`);
-// } else {
-//   window.alert(`Your password is ${passwordLength} characters long.`);
+//password generation function
+function generatePassword() {
+  let passwordLength = prompt(`How long is the password boss?`);
+
+  while (paswordLength < 8 || passwordLength > 128) {
+    paswordLegnth = prompt(`Gotta be between 8-128`);
+    passwordLength = [0];
+  }
+
+  //list of confirms for the user to check in creating the password
+  let specialCharactersConfirm = confirm(`Do you want special characters?`);
+  let numberCharactersConfirm = confirm(`Do you want numbers?`);
+  let uppercaseCharactersConfirm = confirm(`Do you want uppercase letters?`);
+  let lowercaseCharactersConfirm = confirm(`Do you want lowercase letters?`);
+
+  //if statments for each character type
+  if (specialCharactersConfirm === true) {
+    password.push(specialCharacters[0]);
+    characterList.concat(specialCharacters);
+  }
+
+  if (numberCharactersConfirm === true) {
+    password.push(numberCharacters[0]);
+    characterList.concat(numberCharacters);
+  }
+
+  if (uppercaseCharactersConfirm === true) {
+    password.push(uppercaseCharacters[0]);
+    characterList.concat(uppercaseCharacters);
+  }
+
+  if (lowercaseCharactersConfirm === true) {
+    password.push(lowercaseCharacters[0]);
+    characterList.concat(lowercaseCharacters);
+  }
+
+  for (let i = 0; i < characterList.length; i++) {
+    Math.floor(Math.random() * 10);
+  }
+
+//   return password.join("");
 // }
 
-//list of confirms for the user to check in creating the password
-let specialCharactersConfirm = confirm(`Do you want special characters?`);
-let numberCharactersConfirm = confirm(`Do you want numbers?`);
-let uppercaseCharactersConfirm = confirm(`Do you want uppercase letters?`);
-let lowercaseCharactersConfirm = confirm(`Do you want lowercase letters?`);
-
-//if statments for each character type
-if (specialCharactersConfirm === true) {
-  password.push(specialCharacters[0]);
-  characterList.concat(specialCharacters);
-}
-
-if (numberCharactersConfirm === true) {
-  password.push(numberCharacters[0]);
-  characterList.concat(numberCharacters);
-}
-
-if (uppercaseCharactersConfirm === true) {
-  password.push(uppercaseCharacters[0]);
-  characterList.concat(uppercaseCharacters);
-}
-
-if (lowercaseCharactersConfirm === true) {
-  password.push(lowercaseCharacters[0]);
-  characterList.concat(lowercaseCharacters);
-}
-
-//move this code here to a random function generator
-for (let i = 0; i < characterList.length; i++) {
-  Math.floor(Math.random() * 10);
-}
-
-// return password.join(" ");
-
-// Assignment Code
+// button to generate password code
 let generateBtn = document.querySelector("#generate");
 
 //
