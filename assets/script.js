@@ -31,7 +31,7 @@ let specialCharacters = [
   "?",
 ];
 
-let numberCharacters = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let numberCharacters = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 let lowercaseCharacters = [
   "a",
@@ -94,44 +94,50 @@ let uppercaseCharacters = [
 let characterList = [];
 
 //password generation function
-function generatePassword() {
-  let passwordLength = prompt(`How long is the password boss?`);
+// function generatePassword()
 
-  while (paswordLength < 8 || passwordLength > 128) {
-    paswordLegnth = prompt(`Gotta be between 8-128`);
-    passwordLength = [0];
-  }
+//   while (paswordLength < 8 || passwordLength > 128) {
+//     paswordLegnth = prompt(`Gotta be between 8-128`);
+//     passwordLength = [0];
+//   }
 
-  //list of confirms for the user to check in creating the password
-  let specialCharactersConfirm = confirm(`Do you want special characters?`);
-  let numberCharactersConfirm = confirm(`Do you want numbers?`);
-  let uppercaseCharactersConfirm = confirm(`Do you want uppercase letters?`);
-  let lowercaseCharactersConfirm = confirm(`Do you want lowercase letters?`);
+//list of confirms for the user to check in creating the password
+let passwordLength = prompt(`How long is the password boss?`);
+let specialCharactersConfirm = confirm(`Do you want special characters?`);
+let numberCharactersConfirm = confirm(`Do you want numbers?`);
+let uppercaseCharactersConfirm = confirm(`Do you want uppercase letters?`);
+let lowercaseCharactersConfirm = confirm(`Do you want lowercase letters?`);
 
-  //if statments for each character type
-  if (specialCharactersConfirm === true) {
-    password.push(specialCharacters[0]);
-    characterList.concat(specialCharacters);
-  }
+//if statments for each character type
+if (specialCharactersConfirm === true) {
+  // characterList.join();
+  characterList = characterList.concat(specialCharacters);
+}
 
-  if (numberCharactersConfirm === true) {
-    password.push(numberCharacters[0]);
-    characterList.concat(numberCharacters);
-  }
+if (numberCharactersConfirm === true) {
+  // characterList.join();
+  characterList = characterList.concat(numberCharacters);
+}
 
-  if (uppercaseCharactersConfirm === true) {
-    password.push(uppercaseCharacters[0]);
-    characterList.concat(uppercaseCharacters);
-  }
+if (uppercaseCharactersConfirm === true) {
+  // characterList.join();
+  characterList = characterList.concat(uppercaseCharacters);
+}
 
-  if (lowercaseCharactersConfirm === true) {
-    password.push(lowercaseCharacters[0]);
-    characterList.concat(lowercaseCharacters);
-  }
+if (lowercaseCharactersConfirm === true) {
+  // characterList.join();
+  characterList = characterList.concat(lowercaseCharacters);
+}
+characterList.join();
+console.log(characterList);
 
-  for (let i = 0; i < characterList.length; i++) {
-    Math.floor(Math.random() * 10);
-  }
+for (let i = 0; i < passwordLength; i++) {
+  let randomPassword;
+  let randomIndex = Math.floor(Math.random() * characterList.length);
+  let randomCharacter = characterList[randomIndex];
+  randomPassword = randomPassword + randomCharacter;
+  console.log(randomPassword);
+}
 
 //   return password.join("");
 // }
