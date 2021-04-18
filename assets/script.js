@@ -31,7 +31,7 @@ let specialCharacters = [
   "?",
 ];
 
-let numberCharacters = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
+let numberCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 let lowercaseCharacters = [
   "a",
