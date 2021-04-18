@@ -97,14 +97,19 @@ function generatePassword() {
 
   //list of confirms for the user to check in creating the password
   let passwordLength = prompt(`How long is the password boss?`);
+
+  while (passwordLength < 8 || passwordLength > 128) {
+    passwordLength = prompt("Nah, stick to 8-128!");
+  }
+
   let specialCharactersConfirm = confirm(`Do you want special characters?`);
   let numberCharactersConfirm = confirm(`Do you want numbers?`);
   let uppercaseCharactersConfirm = confirm(`Do you want uppercase letters?`);
   let lowercaseCharactersConfirm = confirm(`Do you want lowercase letters?`);
   let password = [];
+
   //if statments for each character type
   if (specialCharactersConfirm === true) {
-    // characterList.join();
     password.push(getRandom(specialCharacters));
     characterList = characterList.concat(specialCharacters);
   }
@@ -123,6 +128,7 @@ function generatePassword() {
     password.push(getRandom(lowercaseCharacters));
     characterList = characterList.concat(lowercaseCharacters);
   }
+
   let remainingPasswordLength = passwordLength - password.length;
   for (let i = 0; i < remainingPasswordLength; i++) {
     password.push(getRandom(characterList));
@@ -136,7 +142,6 @@ function getRandom(arr) {
   return arr[index];
 }
 
-// button to generate password code
 let generateBtn = document.querySelector("#generate");
 
 //
@@ -147,5 +152,4 @@ function writePassword() {
   passwordText.value = password;
 }
 
-// Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
