@@ -1,4 +1,4 @@
 # PasswordGenerator
 
 Here's the link! 
-https://kristamarbury.github.io/PasswordPocketProtector/
+https://kristamarbury.github.io/PasswordGenerator/
