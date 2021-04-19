@@ -96,7 +96,7 @@ function generatePassword() {
   let characterList = [];
 
   //list of confirms for the user to check in creating the password
-  let passwordLength = prompt(`How long is the password boss?`);
+  let passwordLength = prompt(`How many characters in your password, boss?`);
 
   while (passwordLength < 8 || passwordLength > 128) {
     passwordLength = prompt("Nah, stick to 8-128!");
